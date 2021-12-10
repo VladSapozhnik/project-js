@@ -70,6 +70,39 @@ let question22 = 'Требуется написать функцию, вывод
     let question44 = 'Есть массив произвольный. Нужно создать дубль этого массива (такие же значения)'
 
 
+let test = [12, 18, 10, 150, 13, 14, 32, 52, 25, 35, 45];
+
+function questionHi (n) {
+    var array = [];
+    for (var i = 1; i < n.length; i++) {
+        if (n[i] % 3 == 0 && n[i] % 5 == 0) {
+            array.push('fizzbuzz')
+        } else if (n[i] % 3 == 0) {
+            array.push('fizz')
+        } else if (n[i] % 5 == 0) {
+            array.push('buzz')
+        } else {
+            array.push(n[i])
+        };
+    };
+    return array;
+}
+
+console.log(questionHi(test), ' h i')
+
+
+function sum(limit) {
+    let sum = 0;
+
+    for (let i = 0; i <= limit; i++)
+        if (i % 3 === 0 || i % 5 === 0)
+            sum += i;
+
+    return sum;
+}
+
+console.log(sum(10));
+
 let array33 = [5, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 let [a, b, c, d] = array33;
