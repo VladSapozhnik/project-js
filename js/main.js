@@ -76,15 +76,6 @@ let [a, b, c, d] = array33;
 
 console.log(a, b, c, d, ' array');
 
-function doSomething(first, second, third) {
-    var a = first;
-    var b = second;
-    var c = third;
-    console.log(a, b, c);
-}
-
-doSomething(...array33);
-
 //Total array
 let arrayTotal = [5, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -122,41 +113,6 @@ function multiple(el) {
 }
 
 console.log(multiple(array7) + ' multiple')
-
-/* function sumAll(...args) { // args — имя массива
-    let sum = 0;
-
-    for (let arg of args) sum += arg;
-
-    return sum;
-}
-
-console.log(array33, 'sumAll') */
-
-/* function test (e, i) {
-    var item = e.slice(0, 3);
-    for (itm = 0; itm < item.length; itm++) {
-        perem = item;
-    }
-    return perem
-}
-console.log(test(array33));
- */
-/* let arrayTest = array33.map(function (itm, i) {
-    if (i <= 2) {
-        var i = itm;
-        console.log(itm)
-    }
-    return i
-}); */
-
-/* let arrayTest = array33.map(function (itm, i) {
-    if (i <= 2) {
-        var i = itm;
-        console.log(itm)
-    }
-    return i
-}); */
 
 let array44 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let arrayCopy = [].concat(array44);
