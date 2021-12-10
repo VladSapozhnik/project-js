@@ -69,18 +69,94 @@ let question22 = 'Требуется написать функцию, вывод
     let question33 = 'Есть массив чисел произвольной длинны. Нужно создать переменные с значениями равняющимеся первым трем элементам массива'
     let question44 = 'Есть массив произвольный. Нужно создать дубль этого массива (такие же значения)'
 
-let array33 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function test (e, i) {
+let array33 = [5, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let [a, b, c, d] = array33;
+
+console.log(a, b, c, d, ' array');
+
+function doSomething(first, second, third) {
+    var a = first;
+    var b = second;
+    var c = third;
+    console.log(a, b, c);
+}
+
+doSomething(...array33);
+
+//Total array
+let arrayTotal = [5, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let total = arrayTotal.reduce(function (a, b) {
+    return a + b
+});
+
+console.log(total)
+
+const reducerTotal = (current, item) => current + item;
+
+console.log(arrayTotal.reduce(reducerTotal))
+
+function Total(el) {
+    return el ? el.reduce((current, item) => current + item): 0;
+}
+
+console.log(Total(arrayTotal) + ' Summ');
+
+//Multiple array
+let array7 = [2, 5, 11, 15];
+
+let arrayMultiple = array7.reduce(function (a, b){
+    return a * b
+});
+
+console.log(arrayMultiple);
+
+const reducerMultiple = (current, item) => current * item;
+
+console.log(array7.reduce(reducerMultiple))
+
+function multiple(el) {
+    return el ? el.reduce((current, item) => current * item) : 0
+}
+
+console.log(multiple(array7) + ' multiple')
+
+/* function sumAll(...args) { // args — имя массива
+    let sum = 0;
+
+    for (let arg of args) sum += arg;
+
+    return sum;
+}
+
+console.log(array33, 'sumAll') */
+
+/* function test (e, i) {
     var item = e.slice(0, 3);
-    console.log(item)
-    /* item.forEach(element => console.log(element) */
-/*     for (itm = 0; itm < item.length; itm++) {
+    for (itm = 0; itm < item.length; itm++) {
         perem = item;
     }
-    return perem */
+    return perem
 }
 console.log(test(array33));
+ */
+/* let arrayTest = array33.map(function (itm, i) {
+    if (i <= 2) {
+        var i = itm;
+        console.log(itm)
+    }
+    return i
+}); */
+
+/* let arrayTest = array33.map(function (itm, i) {
+    if (i <= 2) {
+        var i = itm;
+        console.log(itm)
+    }
+    return i
+}); */
 
 let array44 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let arrayCopy = [].concat(array44);
