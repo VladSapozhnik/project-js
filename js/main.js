@@ -73,22 +73,22 @@ let question22 = 'Требуется написать функцию, вывод
 let test = [12, 18, 10, 150, 13, 14, 32, 52, 25, 35, 45];
 
 function questionHi (n) {
-    var array = [];
-    for (var i = 1; i < n.length; i++) {
-        if (n[i] % 3 == 0 && n[i] % 5 == 0) {
-            array.push('fizzbuzz')
-        } else if (n[i] % 3 == 0) {
-            array.push('fizz')
-        } else if (n[i] % 5 == 0) {
-            array.push('buzz')
+    var text = "";
+    for (var i = 1; i < n; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            text += "fizzbuzz, "
+        } else if (i % 3 == 0) {
+            text += "fizz, "
+        } else if (i % 5 == 0) {
+            text += "buzz, "
         } else {
-            array.push(n[i])
+            text += i + ', '
         };
     };
-    return array;
-}
+    return text;
+};
 
-console.log(questionHi(test), ' h i')
+console.log(questionHi(100));
 
 
 function sum(limit) {
