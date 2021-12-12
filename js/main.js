@@ -73,7 +73,7 @@ let question22 = 'Требуется написать функцию, вывод
 let test = [12, 18, 10, 150, 13, 14, 32, 52, 25, 35, 45];
 
 function questionHi (n) {
-    var text = "";
+    let text = "";
     for (var i = 1; i < n; i++) {
         if (i % 3 == 0 && i % 5 == 0) {
             text += "fizzbuzz, "
@@ -153,3 +153,17 @@ let arrayCopy2 = array44.slice();
 console.log(arrayCopy + ' copy')
 console.log(arrayCopy2 + ' copy2')
 
+
+let firstname = 'Vlad';
+    age = 24
+
+console.log(`Меня зовут ${firstname}, мне ${age > 23 ? 24 : 23}`);
+
+let name = 'Vlad'
+console.log(name.toLowerCase().startsWith('vlad'));
+console.log(name.toLowerCase().endsWith('lad'));
+console.log(name.repeat(3));
+
+let strSpace = '  space   '
+
+console.log(strSpace.trim())
