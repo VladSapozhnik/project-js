@@ -69,9 +69,6 @@ let question22 = 'Требуется написать функцию, вывод
     let question33 = 'Есть массив чисел произвольной длинны. Нужно создать переменные с значениями равняющимеся первым трем элементам массива'
     let question44 = 'Есть массив произвольный. Нужно создать дубль этого массива (такие же значения)'
 
-
-let test = [12, 18, 10, 150, 13, 14, 32, 52, 25, 35, 45];
-
 function questionHi (n) {
     let text = "";
     for (var i = 1; i < n; i++) {
@@ -167,3 +164,65 @@ console.log(name.repeat(3));
 let strSpace = '  space   '
 
 console.log(strSpace.trim())
+
+/*
+function greet(name) {
+    console.log('function greet');
+};
+*/
+
+/*
+greet()
+const greet2 = function (name) { console.log(name, 'function greet 2') }
+greet2(2)
+*/
+
+const arrow = (item) => {
+  console.log('arraw', item)
+}
+
+arrow(1);
+
+const arrow2 = item => console.log('arraw', item);
+
+arrow2(2);
+
+const arrow3 = item => item ** 2;
+
+console.log(arrow3(13));
+// ** - возводит в степень
+// если 2 значения записываем в (item, item2);
+// если нет имени мы должны записать ();
+
+
+const sum2 = (a, b = a, c = 0) => a + b + c;
+console.log(sum2(5, 10))
+
+function sumAll (...all) {
+    console.log(all)
+}
+
+sumAll(1, 2, 3, 4, 5);
+
+function sumAll2 (...all) {
+    let result = 0;
+    for (let num of all) {
+        result += num
+    };
+    return result;
+};
+
+const res = sumAll2(1,2,3,4,5,6,7);
+console.log(res);
+
+/*let counter = 0;
+
+let interval = setInterval(function (){
+    if(counter == 10) {
+        clearInterval(interval)
+    } else  {
+        console.log(++counter)
+    }
+}, 1000);*/
+
+
