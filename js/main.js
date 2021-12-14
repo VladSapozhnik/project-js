@@ -68,10 +68,12 @@ let question22 = 'Требуется написать функцию, вывод
 
     let question33 = 'Есть массив чисел произвольной длинны. Нужно создать переменные с значениями равняющимеся первым трем элементам массива'
     let question44 = 'Есть массив произвольный. Нужно создать дубль этого массива (такие же значения)'
+    let question55 = 'Есть массив чисел - вывести сумму и вывести результат умножения всех чисел'
 
-function questionHi (n) {
+
+function questionFizzbuzz (n) {
     let text = "";
-    for (var i = 1; i < n; i++) {
+    for (let i = 1; i < n; i++) {
         if (i % 3 == 0 && i % 5 == 0) {
             text += "fizzbuzz, "
         } else if (i % 3 == 0) {
@@ -85,8 +87,7 @@ function questionHi (n) {
     return text;
 };
 
-console.log(questionHi(100));
-
+console.log(questionFizzbuzz(100) + ' question22');
 
 function sum(limit) {
     let sum = 0;
@@ -98,29 +99,27 @@ function sum(limit) {
     return sum;
 }
 
-console.log(sum(10));
-
+console.log(sum(10) + ' sum');
+//question 33
 let array33 = [5, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let [a, b, c, d] = array33;
+let [a, b, c] = array33;
 
-console.log(a, b, c, d, ' array');
+console.log(a, b, c, ' array');
 
 //Total array
 let arrayTotal = [5, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let total = arrayTotal.reduce(function (a, b) {
-    return a + b
-});
+let total = arrayTotal.reduce((a, b) => a + b);
 
-console.log(total)
+console.log(total + ' total')
 
-const reducerTotal = (current, item) => current + item;
+const reducerTotal = (acc, item) => acc + item;
 
 console.log(arrayTotal.reduce(reducerTotal))
 
 function Total(el) {
-    return el ? el.reduce((current, item) => current + item): 0;
+    return el ? el.reduce((acc, item) => acc + item): 0;
 }
 
 console.log(Total(arrayTotal) + ' Summ');
@@ -128,18 +127,16 @@ console.log(Total(arrayTotal) + ' Summ');
 //Multiple array
 let array7 = [2, 5, 11, 15];
 
-let arrayMultiple = array7.reduce(function (a, b){
-    return a * b
-});
+let arrayMultiple = array7.reduce((a, b) => a * b);
 
-console.log(arrayMultiple);
+console.log(arrayMultiple, '123123');
 
-const reducerMultiple = (current, item) => current * item;
+const reducerMultiple = (acc, item) => acc * item;
 
 console.log(array7.reduce(reducerMultiple))
 
 function multiple(el) {
-    return el ? el.reduce((current, item) => current * item) : 0
+    return el ? el.reduce((acc, item) => acc * item) : 0
 }
 
 console.log(multiple(array7) + ' multiple')
@@ -147,6 +144,7 @@ console.log(multiple(array7) + ' multiple')
 let array44 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let arrayCopy = [].concat(array44);
 let arrayCopy2 = array44.slice();
+let test = [...array44]
 console.log(arrayCopy + ' copy')
 console.log(arrayCopy2 + ' copy2')
 
@@ -192,7 +190,6 @@ const arrow3 = item => item ** 2;
 console.log(arrow3(13));
 // ** - возводит в степень
 // если 2 значения записываем в (item, item2);
-// если нет имени мы должны записать ();
 
 
 const sum2 = (a, b = a, c = 0) => a + b + c;
@@ -226,3 +223,126 @@ let interval = setInterval(function (){
 }, 1000);*/
 
 
+//Массивы
+
+
+let arrayNum = [9, 1, 2, 3, 'Map', 5, 6, 7];
+let arrayNum2 = [8,9,10,11,12,13,14]
+arrayNum.unshift(15)
+
+let firstNum = arrayNum.shift();
+let lastNum = arrayNum.pop();
+console.log(firstNum, ' first');
+console.log(lastNum, ' last');
+
+let text = 'JavaScript'
+
+let arrayIndex = arrayNum.indexOf('Map')
+console.log(arrayIndex, 'idx')
+console.log(arrayNum[arrayIndex], ' index')
+
+arrayNum[arrayIndex] = 'array';
+console.log(arrayNum)
+
+console.log(arrayNum.includes(6), ' includes');
+
+let arrayStr = ['a', 'b', 'c', 'd']
+
+let toUpperCase = arrayStr.map(item => item.toUpperCase());
+console.log(toUpperCase, ' toUpperCase');
+
+
+let numbers = [25, 30, 5, 57, 22, 13, 77]
+
+let filterNumbers = numbers.filter(numbers => numbers > 25);
+console.log(numbers, ' numbers');
+console.log(filterNumbers, ' filterNumbers');
+
+let textReverse = text.split('').reverse().join('');
+console.log(textReverse, 'reverse')
+
+let person = [
+    {name: 'Elena', budget: 7300},
+    {name: 'Sergey', budget: 1300},
+    {name: 'Valera', budget: 13000}
+]
+
+let index2 = person.findIndex(person => person.budget === 13000);
+console.log(index2, ' index2');
+
+let person2 = person.find(person => person.budget === 1300);
+console.log(person2, ' person2');
+
+let personBudget = person
+.filter(person => person.budget > 2500)
+.reduce((acc, person) => {
+    return acc += person.budget
+}, 0);
+console.log(personBudget, ' personBudget');
+
+
+//Object
+
+let person3 = {
+    nameLast: 'Sergey',
+    age: 35,
+    lang: ['ru', 'ua', 'en'],
+}
+
+/* let {nameLast, age, lang} = person3;
+
+console.log(age); */
+
+//1 вариант
+for (let key in person3) {
+    if (person3.hasOwnProperty(key)) {
+        console.log('key:', key),
+        console.log('Value:', person3[key]);
+    }
+};
+
+//можно без const, второй лучше.
+const keys = Object.keys(person3)
+keys.forEach((key) => {
+    console.log('Key:', key),
+    console.log('Value:', person3[key]);
+});
+
+const student = {
+    firstnamee: 'Glad',
+    lastname: 'Chinda',
+    country: 'Nigeria'
+};
+
+const { firstnamee, lastname, country } = student;
+console.log(firstnamee, lastname, country);
+
+
+let person4 = {
+    nameLast: 'Sergey',
+    age: 35,
+    lang: ['ru', 'ua', 'en'],
+    info() {
+        console.info('Name:', this.nameLast)
+    }
+}
+
+person4.info();
+
+const logger = {
+    keys() {
+        console.log('Logger keys:', Object.keys(this))
+    },
+    keysAndValue() {
+        Object.keys(this).forEach (val => {
+            console.log(`"${val}": ${this[val]}`)
+        })
+    }
+}
+
+//bind создает новою функцию которою мы кладем в переменую, а call вызывает ее сразу.
+/* const bound = logger.keys.bind(person3);
+bound() */
+
+logger.keys.call(person3)
+logger.keysAndValue.call(person3)
