@@ -329,6 +329,8 @@ let person4 = {
 
 person4.info();
 
+
+//Object.keys метод объектов, который получает ключи.
 const logger = {
     keys() {
         console.log('Logger keys:', Object.keys(this))
@@ -346,3 +348,103 @@ bound() */
 
 logger.keys.call(person3)
 logger.keysAndValue.call(person3)
+
+
+const personTest = {
+    nameLast: 'Vasya',
+    agee: 38
+}
+
+const {nameLast, agee} = personTest;
+
+console.log(nameLast, agee)
+
+
+const test3 = {
+    keys() {
+        console.log('key:', Object.keys(this))
+    },
+    keysAndValue() {
+        Object.keys(this).forEach(key => {
+            console.log(`${key}: ${this[key]}`)
+        })
+    }
+}
+
+test3.keys.call(personTest)
+test3.keysAndValue.call(personTest)
+
+
+//Асинхронность
+
+const timeout = setTimeout(() => {
+    console.log('SetTimeOut');
+}, 2000)
+
+clearTimeout(timeout)
+
+const interval = setInterval(() => {
+    console.log('SetTimeInterval')
+}, 2000)
+
+clearTimeout(interval)
+
+const delay = (callback, wait = 2000) => {
+    setTimeout(callback, wait);
+}
+
+delay(() => {
+    console.log('delay')
+}, 3000)
+
+
+/*
+const prom = (wait = 1000) => {
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve()
+        }, wait)
+    })
+    return promise
+}
+
+prom(2500)
+    .then(() =>{
+        console.log('after to seconds')
+    })
+    .catch(err => console.error('error', err))
+    .finally(() => console.log('Finally'));*/
+
+const prom = (wait = 1000) => {
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject('что-то пошло не так, повторите')
+        }, wait)
+    })
+    return promise
+}
+
+/*
+prom(2500)
+    .then(() =>{
+        console.log('after to seconds')
+    })
+    .catch(err => console.error('error', err))
+    .finally(() => console.log('Finally'));
+*/
+
+
+const getData = () => new Promise( resolve => resolve([
+    1,2,3,4,5,6
+]))
+
+getData().then(data => console.log(data))
+
+async function asyncExample () {
+    try {
+        await prom(3000)
+        await getData()
+    } catch (e) {
+
+    }
+}
