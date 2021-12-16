@@ -110,7 +110,7 @@ console.log(a, b, c, ' array');
 //Total array
 let arrayTotal = [5, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let total = arrayTotal.reduce((a, b) => a + b);
+let total = arrayTotal.reduce((aсс, b) => aсс+ b);
 
 console.log(total + ' total')
 
@@ -398,16 +398,17 @@ delay(() => {
 }, 3000)
 
 
-/*
+
 const prom = (wait = 1000) => {
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve()
+           resolve()
+           /* reject('что-то пошло не так') */
         }, wait)
     })
     return promise
 }
-
+/*
 prom(2500)
     .then(() =>{
         console.log('after to seconds')
@@ -415,14 +416,14 @@ prom(2500)
     .catch(err => console.error('error', err))
     .finally(() => console.log('Finally'));*/
 
-const prom = (wait = 1000) => {
+/* const prom = (wait = 1000) => {
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
             reject('что-то пошло не так, повторите')
         }, wait)
     })
     return promise
-}
+} */
 
 /*
 prom(2500)
@@ -443,8 +444,13 @@ getData().then(data => console.log(data))
 async function asyncExample () {
     try {
         await prom(3000)
-        await getData()
+        const data = await getData()
+        console.log('data', data)
     } catch (e) {
-
+        console.log(e)
+    } finally {
+        console.log('Finally')
     }
 }
+
+asyncExample()
