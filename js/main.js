@@ -149,7 +149,7 @@ console.log(arrayCopy + ' copy')
 console.log(arrayCopy2 + ' copy2')
 
 
-let firstname = 'Vlad';
+let firstname = 'Vlad',
     age = 24
 
 console.log(`Меня зовут ${firstname}, мне ${age > 23 ? 24 : 23}`);

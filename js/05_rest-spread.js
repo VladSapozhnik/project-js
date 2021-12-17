@@ -34,11 +34,17 @@ console.log(d, e)
 const Object = {
     name: 'Sergey',
     age: 23,
-    street: '01'
+    street: 'pp',
+    concat: function () {
+        return `${this.name}, ${this.age}, ${this.street}`
+    }
 }
 
-const {name, age, ...rest} = Object;
-console.log(name, age, rest);
+/*const {name, age, ...rest} = Object;*/
+/*console.log(name, age, rest);*/
+const {name, age, street, concat : addressConcat} = Object;
+console.log(Object.concat(), 'Object')
+console.log(addressConcat.call(Object))
 
 const newAddress = {...Object, street: '55'}
 console.log(newAddress, ' street')
