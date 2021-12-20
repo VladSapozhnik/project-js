@@ -19,6 +19,10 @@ console.log(person)
 const first = {a: 1}
 const second = {b: 2}
 /*console.log(Object.is(20, 20))*/
+
+//Object.assign копировать объект
+
+//Object.entries() метод возвращает массив собственных перечисляемых свойств указанного объекта в формате [key, value], в том же порядке, что и в цикле for...in (разница в том, что for-in перечисляет свойства из цепочки прототипов).
 console.log(Object.assign({}, first, second)) //{}, чтобы объект first не изменился
 console.log(Object.assign({}, first, {a: 2, c: 3}))
 console.log(first)

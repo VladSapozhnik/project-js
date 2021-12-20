@@ -127,7 +127,7 @@ console.log(Total(arrayTotal) + ' Summ');
 //Multiple array
 let array7 = [2, 5, 11, 15];
 
-let arrayMultiple = array7.reduce((a, b) => a * b);
+let arrayMultiple = array7.reduce((aсс, b) => aсс * b);
 
 console.log(arrayMultiple, '123123');
 
