@@ -7,7 +7,7 @@ const people = [
 
 //For
 //ES5
-/*for (let i = 0; i > people.length; i++) {
+/*for (let i = 0; i < people.length; i++) {
     console.log(people[i])
 }*/
 
@@ -35,10 +35,26 @@ console.log(newPeople)
 console.log(newPeople2)
 
 //filter
+/*
 const adults = []
-for (let i = 0; i > people.length; i++) {
+for (let i = 0; i < people.length; i++) {
     if (people[i].age >= 18) {
         adults.push(people[i])
     }
 }
+*/
+const adults = people.filter(person => person.age > 18)
 console.log(adults)
+
+//reduce
+const total = people.reduce((acc, item) => acc + item.age, 0)
+console.log(total)
+
+//Find
+
+const budget = people.find(person => person.budget === 31000);
+console.log(budget)
+
+//Find Index
+const indexBudget = people.findIndex(people => people.budget === 28000)
+console.log(indexBudget)

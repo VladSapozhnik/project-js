@@ -16,7 +16,6 @@ console.log(capitalizeLastLetter(str));
 let str_2 = 'abcdefghijklmnopqrstuvwxyz';
 
 function toUpperCaseEven(str) {
-
     return str.split('').map((item, i) => i % 2 ? item.toLowerCase() : item.toUpperCase()).join('')
 };
 
@@ -54,6 +53,11 @@ let array3 = ['b', 'a', 'b', 'c', 'c', 'd', 'c', 'b', 'b'];
 
 let unique = array3.filter((e, i) => array3.indexOf(e) === i);
 
+function arrayUniq (array) {
+    return [...new Set(array)]
+}
+
+console.log(arrayUniq(array3), ' array-3')
 
 let question3 = 'SET and MAP'
 let question4 = 'сложность алгоритма js'

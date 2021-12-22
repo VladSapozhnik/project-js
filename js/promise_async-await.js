@@ -21,6 +21,7 @@ const delay = ms => {
 function fetchTodos () {
     return delay(2000).then(() => fetch(url)).then(response => response.json())
 }
+
 fetchTodos().then(data => console.log(data)).catch(err => console.log('error', err));
 
 const delay2 = ms => {
