@@ -26,3 +26,10 @@ function uniqValues (array) {
 }
 
 console.log(uniqValues([1, 2, 2, 4, 5, 6, 7, 7, 8, 'a']))
+
+
+const set2 = [1,2,2,3,4,5,5,5, 'a','b','a']
+const newSet = new Set(set2)
+newSet.add(5).add(5).add(6).add(6).add('b').add(2)
+console.log(newSet)
+console.log(newSet.has('a'))

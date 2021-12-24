@@ -4,6 +4,8 @@ const promise = new Promise((resolve, reject) => {
     }, 500)
 })
 
+const delay2 = ms => new Promise(((resolve, reject) => setTimeout(() => {resolve(`Done!!!, ${ms}ms`)}, ms)))
+delay2(8000).then(data => console.log(data))
 
 //выполняется сразу после выполнения промиса
 promise.then(data => console.log(data))
@@ -11,6 +13,7 @@ promise.then(data => console.log(data))
 const delay = ms => new Promise((resolve, reject) => {
     setTimeout(() => resolve('Done! ' + `${ms}ms`), ms)
 })
+
 
 delay(1000)
     .then(data => delay(500))
@@ -26,7 +29,6 @@ async function asyncDelay() {
     } catch (err) {
         console.log('Error', err)
     }
-
 }
 
 asyncDelay()
